@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Reservation;
+use App\Room;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ReservationController extends Controller
 {
@@ -14,7 +16,9 @@ class ReservationController extends Controller
      */
     public function index()
     {
-        //
+        $reservations = Reservation::paginate(15);
+
+        return view('admin.reservations.index', compact('reservations'));
     }
 
     /**
@@ -24,7 +28,9 @@ class ReservationController extends Controller
      */
     public function create()
     {
-        //
+        $rooms = Room::pluck('number', '_id');
+
+        return view('admin.reservations.create', compact('rooms'));
     }
 
     /**
@@ -35,7 +41,18 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, $this->rules);
+
+        $reservation = Reservation::create($request->all());
+
+        $room = Room::find($request->get('room_id'));
+        $room->reservations()->associate($reservation);
+        $room->save();
+
+        $reservation->room()->associate($room);
+        $reservation->save();
+
+        return redirect()->route('admin.reservations.index');
     }
 
     /**
@@ -57,7 +74,9 @@ class ReservationController extends Controller
      */
     public function edit(Reservation $reservation)
     {
-        //
+        $rooms = Room::pluck('number', '_id');
+
+        return view('admin.reservations.edit', compact('reservation', 'rooms'));
     }
 
     /**
@@ -69,7 +88,11 @@ class ReservationController extends Controller
      */
     public function update(Request $request, Reservation $reservation)
     {
-        //
+        $this->validate($request, $this->rules);
+        DB::collection('reservations')->where('_id', $reservation->id)
+            ->update($request->all(), ['upsert' => true]);
+        //zavrsi ovo
+        return redirect()->route('admin.reservations.index');
     }
 
     /**
@@ -80,6 +103,16 @@ class ReservationController extends Controller
      */
     public function destroy(Reservation $reservation)
     {
-        //
+        Reservation::destroy($reservation->id);
+
+        return response()->json('success', 200);
     }
+
+    private $rules = [
+        'number_of_guests' => 'required',
+        'arrival_date' => 'required',
+        'departure_date' => 'required',
+        'status' => 'required',
+        'room_id' => 'required'
+    ];
 }

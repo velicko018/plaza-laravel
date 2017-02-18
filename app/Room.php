@@ -13,7 +13,7 @@ class Room extends Eloquent
 
     public function reservations()
     {
-        return $this->hasMany(Reservation::class);
+        return $this->embedsMany(Reservation::class);
     }
 
     public function roomType()

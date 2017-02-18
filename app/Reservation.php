@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
-class Reservation extends Model
+class Reservation extends Eloquent
 {
     protected $fillable = [
         'number_of_guests',

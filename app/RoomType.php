@@ -16,6 +16,6 @@ class RoomType extends Eloquent
 
     public function rooms()
     {
-        return $this->hasMany(Room::class);
+        return $this->embedsMany(Room::class);
     }
 }

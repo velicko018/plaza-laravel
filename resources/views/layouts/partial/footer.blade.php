@@ -79,6 +79,7 @@
 <script src="{!! asset('js/selectFx.js') !!}"></script>
 <script src="{!! asset('js/jquery.shuffle.min.js') !!}"></script>
 <script src="{!! asset('js/script.js') !!}"></script>
+<script src="{!! asset('js/laravel.js') !!}"></script>
 
 <!-- Extern Scripts -->
 @yield('extra-js')
