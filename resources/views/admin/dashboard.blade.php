@@ -16,12 +16,16 @@
 
             <ul class="nav nav-tabs nav-justified" role="tablist">
                 <li role="presentation" class="active">
-                    <a href="#" aria-controls="profile3" role="tab"
-                       data-toggle="tab"><i class="glyphicon glyphicon-user"></i>
+                    <a href="{!! route('admin/rooms.index') !!}" role="tab" aria-controls="#update-tab"
+                       data-toggle="tab"><i class="glyphicon glyphicon-bed"></i>
                         Profile</a>
                 </li>
-                <li role="presentation"><a href="#" aria-controls="password3" role="tab" data-toggle="tab"><i
-                                class="glyphicon glyphicon-lock"></i> Password</a></li>
+                <li role="presentation">
+                    <a href="#" aria-controls="password3" role="tab" data-toggle="tab">
+                        <i class="glyphicon glyphicon-lock">
+
+                        </i> Password</a>
+                </li>
                 <li role="presentation"><a href="#" aria-controls="password3" role="tab" data-toggle="tab"><i
                                 class="glyphicon glyphicon-lock"></i> Password</a></li>
                 <li role="presentation"><a href="#" aria-controls="password3" role="tab" data-toggle="tab"><i
@@ -29,10 +33,11 @@
             </ul>
 
             <div class="tab-content">
-                <div role="tabpanel" class="tab-pane fade in active" id="profile3">
+                <div role="tabpanel" class="tab-pane fade in active" id="update-tab">
 
                 </div>
             </div>
         </div>
     </div>
 @endsection
+

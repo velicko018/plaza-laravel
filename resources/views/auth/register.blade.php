@@ -64,7 +64,7 @@
                         {{ Form::label('password','Password', ['class' => 'col-md-4 control-label']) }}
 
                         <div class="col-md-6">
-                            {{ Form::text('password',null, ['class' => 'form-control', 'id' => 'password']) }}
+                            {{ Form::password('password', ['class' => 'form-control', 'id' => 'password']) }}
 
                             @if ($errors->has('password'))
                                 <span class="help-block">
@@ -75,10 +75,10 @@
                     </div>
 
                     <div class="mg-contact-form-input">
-                        {{ Form::label('password-confirm','Password Confirm', ['class' => 'col-md-4 control-label']) }}
+                        {{ Form::label('password_confirmation','Password Confirm', ['class' => 'col-md-4 control-label']) }}
 
                         <div class="col-md-6">
-                            {{ Form::text('password-confirm',null, ['class' => 'form-control', 'id' => 'password-confirm']) }}
+                            {{ Form::password('password_confirmation', ['class' => 'form-control', 'id' => 'password_confirmation']) }}
                         </div>
                     </div>
 

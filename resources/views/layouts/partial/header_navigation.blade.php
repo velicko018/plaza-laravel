@@ -92,7 +92,7 @@
                                         Profile
                                     </a>
                                 </li>
-                                @if(!Auth::user()->is_admin)
+                                @if(Auth::user()->is_admin)
                                     <li>
                                         <a href="{{ route('admin') }}">
                                             Admin
