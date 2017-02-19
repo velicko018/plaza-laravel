@@ -18,7 +18,7 @@ Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 
 Route::get('/rooms', ['as' => 'rooms', 'uses' => 'HomeController@rooms']);
 Route::get('/rooms/{id}', ['as' => 'room', 'uses' => 'HomeController@showRoom']);
-Route::get('/reservation', ['as' => 'reservation', 'uses' => 'HomeController@reservation'])->middleware('auth');;
+Route::post('/reservation', ['as' => 'reservationPost', 'uses' => 'HomeController@reservationPost'])->middleware('auth');
 Route::get('/gallery', ['as' => 'gallery', 'uses' => 'HomeController@gallery']);
 Route::get('/contact', ['as' => 'contact', 'uses' => 'HomeController@contact']);
 Route::get('/search', ['as' => 'search', 'uses' => 'HomeController@search']);

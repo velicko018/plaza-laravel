@@ -54,39 +54,25 @@
                 </div>
                 <div class="col-md-9">
                     <div class="mg-bn-forms">
-                        <form>
+                        <form class="form-horizontal" role="form" method="GET" action="{{ route('search') }}">
+                            {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-md-3 col-xs-6">
                                     <div class="input-group date mg-check-in">
                                         <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Check In">
+                                        <input type="text" class="form-control" value="{!! isset($options) ? $options['arrival_date'] : null !!}" name="arrival_date" id="arrival_date" placeholder="Check In">
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-xs-6">
                                     <div class="input-group date mg-check-out">
                                         <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Check Out">
+                                        <input type="text" class="form-control" value="{!! isset($options) ? $options['departure_date'] : null !!}" name="departure_date" id="departure_date" placeholder="Check Out">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="row">
                                         <div class="col-xs-6">
-                                            <select class="form-control">
-                                                <option value="" disabled selected>Adult</option>
-                                                <option value="1" style="color: black">1</option>
-                                                <option value="2" style="color: black">2</option>
-                                                <option value="3" style="color: black">3</option>
-                                                <option value="4" style="color: black">4</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-6">
-                                            <select name="child" class="form-control">
-                                                <option value="" disabled selected>Child</option>
-                                                <option value="0" style="color: black">0</option>
-                                                <option value="1" style="color: black">1</option>
-                                                <option value="2" style="color: black">2</option>
-                                                <option value="3" style="color: black">3</option>
-                                            </select>
+                                            <input type="number" class="form-control" value="{!! isset($options) ? $options['number_of_guests'] : null !!}" name="number_of_guests" id="number_of_guests" placeholder="Guests">
                                         </div>
                                     </div>
                                 </div>

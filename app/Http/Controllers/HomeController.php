@@ -33,19 +33,45 @@ class HomeController extends Controller
 
     public function rooms()
     {
-        return view('rooms');
+        $rooms = Room::paginate(15);
+
+        return view('rooms', compact('rooms'));
     }
 
     public function showRoom($id)
     {
-        return view('room');
+        $room = Room::find($id);
+
+        return view('room', compact('room'));
     }
 
-    public function reservation()
+    public function reservationPost(Request $request)
     {
-        $rooms = Room::all();
+        $this->validate($request, [
+            'number_of_guests' => 'required',
+            'arrival_date' => 'required',
+            'departure_date' => 'required',
+            'room_id' => 'required'
+        ]);
 
-        return view('reservation', compact('rooms'));
+        $request->merge([ 'status' => 1]);
+
+        $reservation = Reservation::create($request->all());
+
+        Auth::user()->reservations()->associate($reservation);
+        Auth::user()->save();
+
+        $reservation->user()->associate(Auth::user());
+        $reservation->save();
+
+        $room = Room::find($request->get('room_id'));
+        $room->reservations()->associate($reservation);
+        $room->save();
+
+        $reservation->room()->associate($room);
+        $reservation->save();
+
+        return response()->json(200);
     }
 
     public function gallery()
@@ -70,7 +96,12 @@ class HomeController extends Controller
             ->where('departure_date', '>=', $request->get('arrival_date'))
             ->pluck('room_id');
         $rooms = Room::with('roomType')->whereNotIn('_id', $reservations)->get();
+        $options = [
+            'arrival_date' => $request->get('arrival_date'),
+            'departure_date' => $request->get('departure_date'),
+            'number_of_guests' => $request->get('number_of_guests')
+        ];
 
-        return view('reservation', compact('rooms'));
+        return view('reservation', compact('rooms', 'options'));
     }
 }
