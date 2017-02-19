@@ -17,10 +17,10 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="/">Home</a></li>
-                    <li><a href="{!! route('rooms') !!}">Rooms</a></li>
-                    <li><a href="{!! route('gallery') !!}">Gallery</a></li>
-                    <li><a href="{!! route('contact') !!}">Contact</a></li>
+                    <li  class="{{ \Request::route()->getName() == 'home' ? 'active' : '' }}"><a href="{!! route('home') !!}">Home</a></li>
+                    <li class="{{ \Request::route()->getName() == 'rooms' ? 'active' : '' }}"><a href="{!! route('rooms') !!}">Rooms</a></li>
+                    <li class="{{ \Request::route()->getName() == 'gallery' ? 'active' : '' }}"><a href="{!! route('gallery') !!}">Gallery</a></li>
+                    <li class="{{ \Request::route()->getName() == 'contact' ? 'active' : '' }}"><a href="{!! route('contact') !!}">Contact</a></li>
                     @if (Auth::guest())
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -95,7 +95,7 @@
                                 @if(Auth::user()->is_admin)
                                     <li>
                                         <a href="{{ route('admin') }}">
-                                            Admin
+                                           <i class="fa fa-eye"></i> Admin
                                         </a>
                                     </li>
                                 @endif

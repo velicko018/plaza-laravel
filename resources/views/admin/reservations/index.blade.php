@@ -4,7 +4,9 @@
 @section('admin-content')
     <div class="row">
     @include('layouts.partial.modal_delete')
-        <a href="{!! route('admin.reservations.create') !!}"><button type="button" class="btn btn-dark-main m-r-5 m-b-5 pull-right">New Reservation</button></a>
+        <div class="col-md-12" style="margin-bottom: 10px">
+            <a href="{!! route('admin.reservations.create') !!}"><button type="button" class="btn btn-dark-main m-r-5 m-b-5 pull-right">New Reservation</button></a>
+        </div>
 
     <!-- begin col-12 -->
         <div class="col-md-12 ui-sortable">

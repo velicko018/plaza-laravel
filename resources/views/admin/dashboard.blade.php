@@ -20,39 +20,46 @@
     </div>
 
     <div class="container" style="padding-top: 30px;">
-        <div class="mg-tab-left-nav">
-
-            <ul class="nav nav-tabs nav-justified " >
-                <li >
-                    <a href="{!! route('admin.rooms.index') !!}" >
-                        <i class="fa fa-bed"></i>
-                        Rooms
-                    </a>
-                </li>
-                <li >
-                    <a href="{!! route('admin.room_types.index') !!}" >
-                        <i class="glyphicon glyphicon-bed"></i>
-                        Room Types
-                    </a>
-                </li>
-                <li >
-                    <a href="{!! route('admin.reservations.index') !!}" >
-                        <i class="glyphicon glyphicon-tags"></i>
-                        Reservations
-                    </a>
-                </li>
-                <li >
-                    <a href="{!! route('admin.users.index') !!}" >
-                        <i class="glyphicon glyphicon-user"></i>
-                        Users
-                    </a>
-                </li>
-            </ul>
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="{{ \Request::route()->getName() == 'admin.rooms.index' ? 'active' : '' }}">
+                <a href="{!! route('admin.rooms.index') !!}" >
+                    <i class="fa fa-bed"></i>
+                    Rooms
+                </a>
+            </li>
+            <li  role="presentation" class="{{ \Request::route()->getName() == 'admin.room_types.index' ? 'active' : '' }}">
+                <a href="{!! route('admin.room_types.index') !!}" >
+                    <i class="glyphicon glyphicon-bed"></i>
+                    Room Types
+                </a>
+            </li>
+            <li  role="presentation" class="{{ \Request::route()->getName() == 'admin.reservations.index' ? 'active' : '' }}">
+                <a href="{!! route('admin.reservations.index') !!}" >
+                    <i class="glyphicon glyphicon-tags"></i>
+                    Reservations
+                </a>
+            </li>
+            <li  role="presentation" class="{{ \Request::route()->getName() == 'admin.users.index' ? 'active' : '' }}">
+                <a href="{!! route('admin.users.index') !!}" >
+                    <i class="glyphicon glyphicon-user"></i>
+                    Users
+                </a>
+            </li>
+        </ul>
+        <div style="min-height: 200px">
+            @yield('admin-content')
         </div>
-        @yield('admin-content')
 
     </div>
 @endsection
 
 
-
+@section('extra-js')
+    <script>
+        $('admin-panel-nbp').click(function () {
+            $('admin-panel-nbp').removeClass('active');
+            console.log('klik');
+            $(this).addClass('active');
+        })
+    </script>
+@endsection

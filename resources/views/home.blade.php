@@ -71,21 +71,21 @@
                                 <div class="col-md-3">
                                     <div class="row">
                                         <div class="col-xs-6">
-                                            <select class="cs-select cs-skin-elastic">
+                                            <select class="form-control">
                                                 <option value="" disabled selected>Adult</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
+                                                <option value="1" style="color: black">1</option>
+                                                <option value="2" style="color: black">2</option>
+                                                <option value="3" style="color: black">3</option>
+                                                <option value="4" style="color: black">4</option>
                                             </select>
                                         </div>
                                         <div class="col-xs-6">
-                                            <select class="cs-select cs-skin-elastic">
+                                            <select name="child" class="form-control">
                                                 <option value="" disabled selected>Child</option>
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
+                                                <option value="0" style="color: black">0</option>
+                                                <option value="1" style="color: black">1</option>
+                                                <option value="2" style="color: black">2</option>
+                                                <option value="3" style="color: black">3</option>
                                             </select>
                                         </div>
                                     </div>

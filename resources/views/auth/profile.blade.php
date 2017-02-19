@@ -29,7 +29,7 @@
                     <h2>Edit Profile</h2>
                     <hr/>
                     <div style="padding-left: 10%; padding-right: 10%;">
-                        {!! Form::model($user, ['route' => ['users.update', $user->id], "method" => "put", "class" => "form-horizontal", 'files' => true] ) !!}
+                        {!! Form::model($user, ['route' => ['admin.users.update', $user->id], "method" => "put", "class" => "form-horizontal", 'files' => true] ) !!}
                             <div class="mg-book-form-input">
                                 {{ Form::label('first_name','First Name', ['class' => 'control-label']) }}
                                 {{ Form::text('first_name',null, ['class' => 'form-control', 'id' => 'first_name', 'value' => old('first_name')]) }}
