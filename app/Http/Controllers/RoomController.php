@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Room;
+use App\RoomType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,9 +16,9 @@ class RoomController extends Controller
      */
     public function index()
     {
-        $rooms = Room::all();
+        $rooms = Room::paginate(10);
 
-        return response()->json(['rooms' => $rooms]);
+        return view('admin.rooms.index', compact('rooms'));
     }
 
     /**
@@ -27,7 +28,9 @@ class RoomController extends Controller
      */
     public function create()
     {
-        //
+        $roomTypes = RoomType::pluck('name', '_id');
+
+        return view('admin.rooms.create', compact('roomTypes'));
     }
 
     /**
@@ -40,9 +43,15 @@ class RoomController extends Controller
     {
         $this->validate($request, $this->rules);
 
-        Room::create($request->all());
+        $room = Room::create($request->all());
+        $roomType = RoomType::find($request->get('room_type_id'));
+        $room->roomType()->associate($roomType);
+        $room->save();
 
-        return redirect()->route('rooms.index');
+        $roomType->rooms()->associate($room);
+        $roomType->save();
+
+        return redirect()->route('admin.rooms.index');
     }
 
     /**
@@ -64,7 +73,9 @@ class RoomController extends Controller
      */
     public function edit(Room $room)
     {
-        //
+        $roomTypes = RoomType::pluck('name', '_id');
+
+        return view('admin.rooms.edit', compact('room', 'roomTypes'));
     }
 
     /**
@@ -77,12 +88,10 @@ class RoomController extends Controller
     public function update(Request $request, Room $room)
     {
         $this->validate($request, $this->rules);
-
-        DB::collection('rooms')->where('number', $room->number)
+        DB::collection('rooms')->where('_id', $room->id)
             ->update($request->all(), ['upsert' => true]);
-
-
-        return redirect()->route('rooms.index');
+        //zavrsi ovo
+        return redirect()->route('admin.rooms.index');
     }
 
     /**
@@ -95,11 +104,12 @@ class RoomController extends Controller
     {
         Room::destroy($room->id);
 
-        return redirect()->route('rooms.index');
+        return response()->json('success', 200);
     }
 
     private $rules = [
         'number' => 'required|integer',
-        'floor' => 'required|integer'
+        'floor' => 'required|integer',
+        'room_type_id' => 'required'
     ];
 }

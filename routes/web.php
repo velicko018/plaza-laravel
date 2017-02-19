@@ -25,10 +25,10 @@ Route::get('/profile', ['as' => 'profile', 'uses' => 'HomeController@profile'])-
 Route::group(["prefix" => "admin", "middleware" => ["auth","admin"]], function () {
 
     Route::get('/', ['as' => 'admin', 'uses' => 'AdminController@dashboard']);
-    Route::resource('users', 'UserController');
-    Route::resource('rooms', 'RoomController');
-    Route::resource('room_types', 'RoomTypeController');
-    Route::resource('reservations', 'ReservationController');
+    Route::resource('users', 'UserController', ['as' => 'admin']);
+    Route::resource('rooms', 'RoomController', ['as' => 'admin']);
+    Route::resource('room_types', 'RoomTypeController', ['as' => 'admin']);
+    Route::resource('reservations', 'ReservationController', ['as' => 'admin']);
 
 });
 
