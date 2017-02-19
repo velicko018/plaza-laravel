@@ -17,7 +17,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li class="active"><a href="/">Home</a></li>
                     <li><a href="{!! route('rooms') !!}">Rooms</a></li>
                     <li><a href="{!! route('gallery') !!}">Gallery</a></li>
                     <li><a href="{!! route('contact') !!}">Contact</a></li>
@@ -89,7 +89,7 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li>
                                     <a href="{{ route('profile') }}">
-                                        Profile
+                                        <i class="fa fa-user"></i> Profile
                                     </a>
                                 </li>
                                 @if(Auth::user()->is_admin)
@@ -100,10 +100,8 @@
                                     </li>
                                 @endif
                                 <li>
-                                    <a href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        Logout
+                                    <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                        <i class="fa fa-sign-out"></i> Logout
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         {{ csrf_field() }}

@@ -18,7 +18,7 @@
             <div class="row">
 
                 <div class="col-md-5">
-                    <h2 class="mg-sec-left-title">Send an E-mail</h2>
+                    <h2 class="mg-sec-left-title">Send us an E-mail</h2>
                     <form class="clearfix">
                         <div class="mg-contact-form-input">
                             <label for="full-name">Full Name</label>
@@ -41,11 +41,13 @@
                 </div>
                 <div class="col-md-7">
                     <h2 class="mg-sec-left-title">Office Address</h2>
-                    <p>Consulatu quietem ipsas obruamus. Controversia unam queo firmam videri, afranius derigatur sine sentit inliberali beatam scribendi splendide. Recusabo maximisque ferentur arbitraretur vellem oritur cupiditatibus copulatas.</p>
+                    <p>
+                        You can send us an email or contact us at any time and we will respond to you as soon as we can.
+                    </p>
                     <ul class="mg-contact-info">
-                        <li><i class="fa fa-map-marker"></i> Level 13, 2 Elizabeth St, Melbourne, Victoria 3000 Australia</li>
-                        <li><i class="fa fa-phone"></i> +000-123-456-789 (Sale)</li>
-                        <li><i class="fa fa-envelope"></i> <a href="mailto:#">example@example.com</a></li>
+                        <li><i class="fa fa-map-marker"></i> 768 Fifth Avenue, Manhattan, New York City 10019</li>
+                        <li><i class="fa fa-phone"></i> +000-123-456-789 (Hotel reception)</li>
+                        <li><i class="fa fa-envelope"></i> <a href="mailto:#">park-plaza-ny@example.com</a></li>
                     </ul>
                     <div id="mg-map" class="mg-map"></div>
                 </div>

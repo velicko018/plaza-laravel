@@ -162,13 +162,12 @@
             <div class="row">
                 <div class="col-md-7">
                     <h2 class="mg-sec-left-title">About Plaza Hotel</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Aliqua venandi mutat plerisque nostrum vos, geometria intellegimus percurri mediocritatem aeque suppetet explicatis,
-                        praeclaram ambigua cogitavisse vituperatoribus dicent signiferumque alios improbe, reliquisti rudem,
-                        consedit pendet circumcisaque amorem patria magnopere inmortalibus dolere. Didicisset labore vitium referenda labor
-                        peccant integre turpe est tantopere, eius defuturum sua dolorum crudelis exercitumque, nobis,
-                        videntur doloribus patre poetarum omnisque cognitionem primum, atomos certamen possent, adversantur
-                        probatum iudicante indicaverunt repugnantibus, operis aequi aequitate clarorum occultarum multa diis sine inter.</p>
+                    <p>
+                        The Plaza Hotel, located in the Midtown Manhattan neighborhood of the borough of Manhattan, New York City, is a landmark 20-story luxury hotel owned by an Indian conglomerate, Sahara India Pariwar.
+                    </p>
+                    <p>
+                        With a height of 250 ft (76 m) and a length of 400 ft (120 m), the hotel occupies the west side of Grand Army Plaza, from which it derives its name, and extends along Central Park South in Manhattan. Fifth Avenue extends along the east side of Grand Army Plaza. The Plaza Hotel is recognized as a Historic Hotel of America by the National Trust for Historic Preservation.
+                    </p>
                 </div>
                 <div class="col-md-5">
                     <div class="video-responsive">
@@ -186,7 +185,7 @@
                 <div class="col-md-12">
                     <div class="mg-sec-title">
                         <h2>Hotel facilties</h2>
-                        <p>These best rooms chosen by our customers</p>
+                        <p>These are the best rooms chosen by our customers</p>
                     </div>
                     <div class="row">
                         <div class="col-sm-4">
@@ -195,7 +194,7 @@
                                     <i class="glyphicon glyphicon-time"></i>
                                     <h3>24-hour reception</h3>
                                 </div>
-                                <p>Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.</p>
+                                <p>Our staff is there for you 24/7 every day of week to make sure you get everything you want.</p>
                             </div>
                         </div>
                         <div class="col-sm-4">
@@ -204,7 +203,7 @@
                                     <i class="fa fa-cogs"></i>
                                     <h3>Room service</h3>
                                 </div>
-                                <p>Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.</p>
+                                <p>Every room has a room service that is at your disposal 24/7.</p>
                             </div>
                         </div>
                         <div class="col-sm-4">
@@ -213,7 +212,7 @@
                                     <i class="fa fa-car"></i>
                                     <h3>Car hire</h3>
                                 </div>
-                                <p>Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.</p>
+                                <p>We provide a car services for out guests.</p>
                             </div>
                         </div>
                     </div>
@@ -224,7 +223,7 @@
                                     <i class="fa fa-phone"></i>
                                     <h3>Wake-up call</h3>
                                 </div>
-                                <p>Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.</p>
+                                <p>You can order wake-up call at any time.</p>
                             </div>
                         </div>
                         <div class="col-sm-4">
@@ -233,7 +232,7 @@
                                     <i class="fa fa-coffee"></i>
                                     <h3>Coffee and tea</h3>
                                 </div>
-                                <p>Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.</p>
+                                <p>You can order coffee or tea to your room or can drink it in one of our restorants.</p>
                             </div>
                         </div>
                         <div class="col-sm-4">
@@ -242,7 +241,7 @@
                                     <i class="fa fa-cogs"></i>
                                     <h3>Free Wi-Fi</h3>
                                 </div>
-                                <p>Didicisset labore vitium referenda labor peccant integre turpe est tantopere, eius defuturum sua dolorum.</p>
+                                <p>Every room has wi-fi connection thats free of charge.</p>
                             </div>
                         </div>
                     </div>

@@ -29,21 +29,21 @@
                     <h2>Edit Profile</h2>
                     <hr/>
                     <div style="padding-left: 10%; padding-right: 10%;">
-                        <form method="post">
+                        {!! Form::model($user, ['route' => ['users.update', $user->id], "method" => "put", "class" => "form-horizontal", 'files' => true] ) !!}
                             <div class="mg-book-form-input">
-                                <label for="first_name">First Name</label>
-                                <input class="form-control" id="first_name" name="first_name"/>
+                                {{ Form::label('first_name','First Name', ['class' => 'control-label']) }}
+                                {{ Form::text('first_name',null, ['class' => 'form-control', 'id' => 'first_name', 'value' => old('first_name')]) }}
                             </div>
                             <div class="mg-book-form-input">
-                                <label for="last_name">Last Name</label>
-                                <input class="form-control" id="last_name" name="last_name"/>
+                                {{ Form::label('last_name','Last Name', ['class' => 'control-label']) }}
+                                {{ Form::text('last_name',null, ['class' => 'form-control', 'id' => 'last_name', 'value' => old('last_name')]) }}
                             </div>
                             <div class="mg-book-form-input">
-                                <label for="email">E-Mail Address</label>
-                                <input class="form-control" id="email" name="email"/>
+                                {{ Form::label('email','Email Address', ['class' => 'control-label']) }}
+                                {{ Form::text('email',null, ['class' => 'form-control', 'id' => 'email', 'value' => old('email')]) }}
                             </div>
                             <button type="submit" class="btn btn-main">Update</button>
-                        </form>
+                        {!! Form::close() !!}
                     </div>
 
                 </div>
@@ -53,16 +53,16 @@
                     <div style="padding-left: 10%; padding-right: 10%;">
                         <form method="post">
                             <div class="mg-book-form-input">
-                                <label>Old Password</label>
-                                <input class="form-control" type="password"/>
+                                {{ Form::label('old_password','Old Password', ['class' => 'control-label']) }}
+                                 {{ Form::password('old_password',null, ['class' => 'form-control', 'id' => 'old_password']) }}
                             </div>
                             <div class="mg-book-form-input">
-                                <label>New Password</label>
-                                <input class="form-control" type="password" required/>
+                                {{ Form::label('new_password','New Password', ['class' => 'control-label']) }}
+                                 {{ Form::password('new_password',null, ['class' => 'form-control', 'id' => 'new_password']) }}
                             </div>
                             <div class="mg-book-form-input">
-                                <label>Repeat Password</label>
-                                <input class="form-control" type="password" required/>
+                                {{ Form::label('repeat_password','Repeat Password', ['class' => 'control-label']) }}
+                                {{ Form::password('repeat_password',null, ['class' => 'form-control', 'id' => 'repeat_password']) }}
                             </div>
                             <button type="submit" class="btn btn-main">Update Password</button>
                         </form>
