@@ -1,12 +1,20 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
+<div class="mg-page-title parallax">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Reset Password</h2>
+                <p>Cogitavisse erant puerilis utrum efficiantur adhuc expeteretur.</p>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
-
                 <div class="panel-body">
                     @if (session('status'))
                         <div class="alert alert-success">
