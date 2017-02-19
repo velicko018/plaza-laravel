@@ -73,4 +73,5 @@ class HomeController extends Controller
 
         return view('reservation', compact('rooms'));
     }
+
 }
