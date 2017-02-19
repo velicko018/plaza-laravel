@@ -1,11 +1,20 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
+<div class="mg-page-title parallax">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Login</h2>
+                <p>Cogitavisse erant puerilis utrum efficiantur adhuc expeteretur.</p>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
@@ -50,7 +59,7 @@
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-dark-main">
                                     Login
                                 </button>
 

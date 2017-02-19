@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Reservation;
 use App\Room;
 use App\RoomType;
 use App\User;
@@ -35,6 +36,16 @@ class HomeController extends Controller
         return view('rooms');
     }
 
+    public function showRoom($id)
+    {
+        return view('room');
+    }
+
+    public function reservation()
+    {
+        return view('reservation');
+    }
+
     public function gallery()
     {
         return view('gallery');
@@ -49,5 +60,18 @@ class HomeController extends Controller
     {
         $user = Auth::user();
         return view('auth.profile', compact('user'));
+    }
+
+    public function search(Request $request)
+    {
+        /*$rooms = Room::with('reservations')->whereNot('reservations._id', function($query) use($request){
+                    $query->distinct('_id')
+                        ->where('arrival_date', '<=', $request->get('departure_date'))
+                        ->where('departure_date', '>=', $request->get('arrival_date'));
+                });
+
+        dd($rooms->get());
+        dd($request->all());*/
+
     }
 }
