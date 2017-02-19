@@ -9,7 +9,7 @@
 
 
 @section('admin-content')
-    <div class="row">
+    <div class="row" style="margin-top: 10px;">
         <!-- begin col-6 -->
         <div class="col-md-6 ui-sortable">
             <!-- begin panel -->

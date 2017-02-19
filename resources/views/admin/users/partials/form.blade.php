@@ -62,6 +62,6 @@
 <!-- Submit Form Button -->
 <div class="form-group">
     <div class="col-md-4 col-md-offset-4">
-        {!! Form::submit($submitButtonText, ['class' => 'btn btn-sm btn-success form-control']) !!}
+        {!! Form::submit($submitButtonText, ['class' => 'btn btn-sm btn-main form-control']) !!}
     </div>
 </div>

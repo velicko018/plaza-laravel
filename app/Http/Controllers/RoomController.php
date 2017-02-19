@@ -42,9 +42,10 @@ class RoomController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, $this->rules);
-
         $room = Room::create($request->all());
+
         $roomType = RoomType::find($request->get('room_type_id'));
+        dd($room);
         $room->roomType()->associate($roomType);
         $room->save();
 

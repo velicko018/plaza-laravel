@@ -16,12 +16,20 @@
 
             <ul class="nav nav-tabs nav-justified" role="tablist">
                 <li role="presentation" class="active">
-                    <a href="#profile3" aria-controls="profile3" role="tab"
-                                                          data-toggle="tab"><i class="glyphicon glyphicon-user"></i>
-                        Profile</a>
+                    <a href="#profile3" aria-controls="profile3" role="tab" data-toggle="tab">
+                        <i class="glyphicon glyphicon-user"></i> Profile
+                    </a>
                 </li>
-                <li role="presentation"><a href="#password3" aria-controls="password3" role="tab" data-toggle="tab"><i
-                                class="glyphicon glyphicon-lock"></i> Password</a></li>
+                <li role="presentation">
+                    <a href="#password3" aria-controls="password3" role="tab" data-toggle="tab">
+                        <i class="glyphicon glyphicon-lock"></i> Password
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a href="#reservations3" aria-controls="reservations3" role="tab" data-toggle="tab">
+                        <i class="glyphicon glyphicon-tags"></i> My Reservations
+                    </a>
+                </li>
             </ul>
 
             <div class="tab-content">
@@ -68,7 +76,28 @@
                         </form>
                     </div>
                 </div>
-
+                <div role="tabpanel" class="tab-pane fade" id="reservations3">
+                    <h2>My Reservations</h2>
+                    <hr/>
+                    <div style="padding-left: 10%; padding-right: 10%;">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <th>Room No.</th>
+                                <th>Floor</th>
+                                <th>Reserved from</th>
+                                <th>Reserved until</th>
+                            </thead>
+                            {{--@foreach($user->reservations as #reservation)--}}
+                                {{--<tr>--}}
+                                    {{--<td>{!! $reservation->number !!}</td>--}}
+                                    {{--<td>{!! $reservation->number !!}</td>--}}
+                                    {{--<td>{!! $reservation->number !!}</td>--}}
+                                    {{--<td>{!! $reservation->number !!}</td>--}}
+                                {{--</tr>--}}
+                            {{--@endforeach--}}
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
