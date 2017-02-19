@@ -43,7 +43,9 @@ class HomeController extends Controller
 
     public function reservation()
     {
-        return view('reservation');
+        $rooms = Room::all();
+
+        return view('reservation', compact('rooms'));
     }
 
     public function gallery()
@@ -64,14 +66,11 @@ class HomeController extends Controller
 
     public function search(Request $request)
     {
-        /*$rooms = Room::with('reservations')->whereNot('reservations._id', function($query) use($request){
-                    $query->distinct('_id')
-                        ->where('arrival_date', '<=', $request->get('departure_date'))
-                        ->where('departure_date', '>=', $request->get('arrival_date'));
-                });
+        $reservations = Reservation::where('arrival_date', '<=', $request->get('departure_date'))
+            ->where('departure_date', '>=', $request->get('arrival_date'))
+            ->pluck('room_id');
+        $rooms = Room::with('roomType')->whereNotIn('_id', $reservations)->get();
 
-        dd($rooms->get());
-        dd($request->all());*/
-
+        return view('reservation', compact('rooms'));
     }
 }
