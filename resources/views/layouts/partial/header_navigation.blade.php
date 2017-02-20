@@ -22,6 +22,8 @@
                     <li class="{{ \Request::route()->getName() == 'gallery' ? 'active' : '' }}"><a href="{!! route('gallery') !!}">Gallery</a></li>
                     <li class="{{ \Request::route()->getName() == 'contact' ? 'active' : '' }}"><a href="{!! route('contact') !!}">Contact</a></li>
                     @if (Auth::guest())
+                        <li class="{{ \Request::route()->getName() == 'register' ? 'active' : '' }}"><a href="{!! route('register') !!}">Register</a></li>
+
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 Login
