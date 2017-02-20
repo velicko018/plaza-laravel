@@ -81,7 +81,7 @@ class RoomTypeController extends Controller
         $this->validate($request, $this->rules);
 
         DB::collection('room_types')->where('_id', $id)
-            ->update($request->all(), ['upsert' => false]);
+            ->update($request->all(), ['upsert' => true]);
 
         return redirect()->route('admin.room_types.index');
     }

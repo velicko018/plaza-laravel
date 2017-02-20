@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>Gallery - 4 Columns</h2>
+                    <h2>Gallery</h2>
                     <p>Cogitavisse erant puerilis utrum efficiantur adhuc expeteretur.</p>
                 </div>
             </div>

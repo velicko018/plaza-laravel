@@ -45,7 +45,7 @@ class RoomController extends Controller
         $room = Room::create($request->all());
 
         $roomType = RoomType::find($request->get('room_type_id'));
-        dd($room);
+
         $room->roomType()->associate($roomType);
         $room->save();
 
@@ -91,7 +91,7 @@ class RoomController extends Controller
         $this->validate($request, $this->rules);
         DB::collection('rooms')->where('_id', $room->id)
             ->update($request->all(), ['upsert' => true]);
-        //zavrsi ovo
+
         return redirect()->route('admin.rooms.index');
     }
 

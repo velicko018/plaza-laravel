@@ -19,7 +19,7 @@
                         <div class="mg-avl-room">
                             <div class="row">
                                 <div class="col-sm-5">
-                                    <a href="#"><img src="{!! asset('images/room-1.png') !!}" alt="" class="img-responsive"></a>
+                                    <a href="#"><img src="{!! asset('images/room-' . random_int(1,4) . '.png') !!}" alt="" class="img-responsive"></a>
                                 </div>
                                 <div class="col-sm-7">
                                     <h3 class="mg-avl-room-title"><a href="#">{!! $room->roomType->name !!}</a> <span>${!! $room->roomType->price !!}/Night</span></h3>

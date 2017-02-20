@@ -1,6 +1,6 @@
 @extends('admin.dashboard')
 
-@section('page-title', 'Edit Reservation')
+@section('page-title', 'Edit User')
 @section('page-title-small', '')
 
 @section('meta')
@@ -16,11 +16,11 @@
             <!-- begin panel -->
             <div class="panel panel-inverse" data-sortable-id="form-stuff-1">
                 <div class="panel-heading">
-                    <h4 class="panel-title">Edit Reservation</h4>
+                    <h4 class="panel-title">Edit User</h4>
                 </div>
                 <div class="panel-body">
-                    {!! Form::model($reservation, ['route' => ['admin.reservations.update', $reservation->id], "method" => "put", "class" => "form-horizontal"] ) !!}
-                        @include('admin.reservations.partials.form', ['submitButtonText' => 'Update'])
+                    {!! Form::model($user, ['route' => ['admin.users.update', $user->id], "method" => "put", "class" => "form-horizontal"] ) !!}
+                        @include('admin.users.partials.form', ['submitButtonText' => 'Update'])
                     {!! Form::close() !!}
                 </div>
             </div>

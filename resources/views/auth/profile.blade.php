@@ -82,19 +82,19 @@
                     <div style="padding-left: 10%; padding-right: 10%;">
                         <table class="table table-hover table-striped">
                             <thead>
-                                <th>Room No.</th>
-                                <th>Floor</th>
-                                <th>Reserved from</th>
-                                <th>Reserved until</th>
+                                <th>Arrival Date</th>
+                                <th>Departure Date</th>
+                                <th>Number Of Guests</th>
+                                <th>Status</th>
                             </thead>
-                            {{--@foreach($user->reservations as #reservation)--}}
-                                {{--<tr>--}}
-                                    {{--<td>{!! $reservation->number !!}</td>--}}
-                                    {{--<td>{!! $reservation->number !!}</td>--}}
-                                    {{--<td>{!! $reservation->number !!}</td>--}}
-                                    {{--<td>{!! $reservation->number !!}</td>--}}
-                                {{--</tr>--}}
-                            {{--@endforeach--}}
+                            @foreach($user->reservations as $reservation)
+                                <tr>
+                                    <td>{!! $reservation->arrival_date !!}</td>
+                                    <td>{!! $reservation->departure_date !!}</td>
+                                    <td>{!! $reservation->number_of_guests !!}</td>
+                                    <td>{!! $reservation->status !!}</td>
+                                </tr>
+                            @endforeach
                         </table>
                     </div>
                 </div>
