@@ -24,7 +24,7 @@ Route::get('/contact', ['as' => 'contact', 'uses' => 'HomeController@contact']);
 Route::get('/search', ['as' => 'search', 'uses' => 'HomeController@search'])->middleware('auth');
 
 Route::get('/profile', ['as' => 'profile', 'uses' => 'HomeController@profile'])->middleware('auth');
-
+Route::resource('comments', 'CommentController');
 Route::group(["prefix" => "admin", "middleware" => ["auth","admin"]], function () {
 
     Route::get('/', ['as' => 'admin', 'uses' => 'AdminController@dashboard']);

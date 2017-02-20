@@ -27,18 +27,34 @@
                                     <div class="row mg-room-fecilities">
                                         <div class="col-xs-6">
                                             <ul>
-                                                <li><i class="glyphicon glyphicon-cutlery"></i> Breakfast</li>
-                                                <li><i class="fa fa-sun-o"></i> Air conditioning</li>
-                                                <li><i class="fa fa-car"></i> Free Parking</li>
-                                                <li><i class="fa fa-bed"></i> Room service</li>
+                                                @if($room->metas->breakfast == 1)
+                                                    <li><i class="glyphicon glyphicon-cutlery"></i> Breakfast</li>
+                                                @endif
+                                                @if($room->metas->air_condition == 1)
+                                                    <li><i class="fa fa-sun-o"></i> Air conditioning</li>
+                                                @endif
+                                                @if($room->metas->free_parking == 1)
+                                                    <li><i class="fa fa-car"></i> Free Parking</li>
+                                                @endif
+                                                @if($room->metas->room_service == 1)
+                                                    <li><i class="fa fa-bed"></i> Room service</li>
+                                                @endif
                                             </ul>
                                         </div>
                                         <div class="col-xs-6">
                                             <ul>
-                                                <li><i class="fa fa-trophy"></i> GYM Facility</li>
-                                                <li><i class="fa fa-tv"></i> TV LCD</li>
-                                                <li><i class="fa fa-wifi"></i> Wi-fi service</li>
-                                                <li><i class="glyphicon glyphicon-arrow-up"></i> Elevator</li>
+                                                @if($room->metas->gym == 1)
+                                                    <li><i class="fa fa-trophy"></i> GYM Facility</li>
+                                                @endif
+                                                @if($room->metas->tv == 1)
+                                                    <li><i class="fa fa-tv"></i> TV LCD</li>
+                                                @endif
+                                                @if($room->metas->{$wiFi = 'wi-fi'} == 1)
+                                                    <li><i class="fa fa-wifi"></i> Wi-fi service</li>
+                                                @endif
+                                                @if($room->metas->elevator == 1)
+                                                    <li><i class="glyphicon glyphicon-arrow-up"></i> Elevator</li>
+                                                @endif
                                             </ul>
                                         </div>
                                     </div>

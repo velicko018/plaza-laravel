@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Room;
+use App\RoomMetas;
 use App\RoomType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -44,9 +45,21 @@ class RoomController extends Controller
         $this->validate($request, $this->rules);
         $room = Room::create($request->all());
 
+        $roomMetas = RoomMetas::create([
+            'breakfast' => $request->has('breakfast') ? 1 : 0,
+            'air_condition' => $request->has('air_condition') ? 1 : 0,
+            'free_parking' => $request->has('free_parking') ? 1 : 0,
+            'room_service' => $request->has('room_service') ? 1 : 0,
+            'gym' => $request->has('gym') ? 1 : 0,
+            'tv' => $request->has('tv') ? 1 : 0,
+            'wi-fi' => $request->has('wi-fi') ? 1 : 0,
+            'elevator' => $request->has('elevator') ? 1 : 0
+        ]);
+
         $roomType = RoomType::find($request->get('room_type_id'));
 
         $room->roomType()->associate($roomType);
+        $room->metas()->associate($roomMetas);
         $room->save();
 
         $roomType->rooms()->associate($room);
@@ -75,8 +88,9 @@ class RoomController extends Controller
     public function edit(Room $room)
     {
         $roomTypes = RoomType::pluck('name', '_id');
+        $roomMetas = $room->metas;
 
-        return view('admin.rooms.edit', compact('room', 'roomTypes'));
+        return view('admin.rooms.edit', compact('room', 'roomTypes', 'roomMetas'));
     }
 
     /**
@@ -91,6 +105,19 @@ class RoomController extends Controller
         $this->validate($request, $this->rules);
         DB::collection('rooms')->where('_id', $room->id)
             ->update($request->all(), ['upsert' => true]);
+
+        $roomMetas = new RoomMetas([
+            'breakfast' => $request->has('breakfast') ? 1 : 0,
+            'air_condition' => $request->has('air_condition') ? 1 : 0,
+            'free_parking' => $request->has('free_parking') ? 1 : 0,
+            'room_service' => $request->has('room_service') ? 1 : 0,
+            'gym' => $request->has('gym') ? 1 : 0,
+            'tv' => $request->has('tv') ? 1 : 0,
+            'wi-fi' => $request->has('wi-fi') ? 1 : 0,
+            'elevator' => $request->has('elevator') ? 1 : 0
+        ]);
+        $room->metas()->associate($roomMetas);
+        $room->save();
 
         return redirect()->route('admin.rooms.index');
     }

@@ -36,11 +36,11 @@
                         <h2 class="mg-widget-title">Social Media</h2>
                         <p>You can find us on social media.</p>
                         <ul class="mg-footer-social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="http://www.instagram.com"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="http://www.pinterest.com"><i class="fa fa-pinterest"></i></a></li>
+                            <li><a href="http://www.plus.google.com"><i class="fa fa-google-plus"></i></a></li>
                         </ul>
                     </div>
                 </div>

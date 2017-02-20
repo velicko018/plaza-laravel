@@ -1,13 +1,5 @@
 @extends('layouts.master')
 
-@section('extra-css')
-    <style>
-        ul li{
-            display: inline !important;
-        }
-    </style>
-@endsection
-
 @section('content')
     <div class="mg-page-title parallax" style="background-position: 50% 0px;">
         <div class="container">
@@ -58,7 +50,6 @@
     <script>
         $('admin-panel-nbp').click(function () {
             $('admin-panel-nbp').removeClass('active');
-            console.log('klik');
             $(this).addClass('active');
         })
     </script>

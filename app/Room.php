@@ -20,4 +20,14 @@ class Room extends Eloquent
     {
         return $this->belongsTo(RoomType::class);
     }
+
+    public function comments()
+    {
+        return $this->embedsMany(Comment::class);
+    }
+
+    public function metas()
+    {
+        return $this->embedsOne(RoomMetas::class);
+    }
 }

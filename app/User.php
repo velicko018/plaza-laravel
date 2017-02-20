@@ -35,4 +35,9 @@ class User extends Eloquent implements AuthenticatableContract,
     {
         return $this->embedsMany(Reservation::class);
     }
+
+    public function comments()
+    {
+        return $this->embedsMany(Comment::class);
+    }
 }
